@@ -1,0 +1,432 @@
+/* =========================================================
+   PALETTE
+   --navy:       #1e2235  (deepest background)
+   --brown-dk:   #3a2f28  (card / secondary bg)
+   --brown-md:   #4a3f35  (borders, inputs)
+   --taupe:      #9c8878  (mid accent, muted text)
+   --blush:      #d4b8a8  (highlights, primary accent)
+   ========================================================= */
+
+:root {
+    --navy: #1e2235;
+    --navy-2: #252a3e;
+    --navy-3: #2d3250;
+    --brown-dk: #3a2f28;
+    --brown-md: #4a3f35;
+    --brown-lt: #5e5048;
+    --taupe: #9c8878;
+    --blush: #d4b8a8;
+    --blush-lt: #e8d4c8;
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--navy);
+    color: var(--blush-lt);
+}
+
+.retro-font {
+    font-family: 'Fira Code', monospace;
+}
+
+/* ── Glow effects (re-tuned for warm palette) ─────────── */
+.glow-green {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.35);
+}
+
+.glow-red {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.35);
+}
+
+.glow-purple {
+    box-shadow: 0 0 18px rgba(212, 184, 168, 0.35);
+}
+
+.glow-blue {
+    box-shadow: 0 0 15px rgba(156, 136, 120, 0.35);
+}
+
+/* ── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brown-md);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--taupe);
+}
+
+/* =========================================================
+   GLOBAL TAILWIND OVERRIDES
+   Replace cool slate/indigo/purple tokens with warm palette
+   ========================================================= */
+
+/* Page backgrounds */
+.bg-slate-950,
+.bg-slate-950\/90,
+.bg-slate-950\/80,
+.bg-slate-950\/60,
+.bg-slate-950\/40 {
+    background-color: color-mix(in srgb, var(--navy) 95%, transparent) !important;
+}
+
+.bg-slate-900,
+.bg-slate-900\/80,
+.bg-slate-900\/60,
+.bg-slate-900\/95 {
+    background-color: var(--navy-2) !important;
+}
+
+.bg-slate-800,
+.bg-slate-800\/60 {
+    background-color: var(--brown-dk) !important;
+}
+
+.bg-slate-700 {
+    background-color: var(--brown-md) !important;
+}
+
+/* Borders */
+.border-slate-900 {
+    border-color: var(--navy) !important;
+}
+
+.border-slate-800,
+.border-slate-850 {
+    border-color: var(--brown-dk) !important;
+}
+
+.border-slate-700 {
+    border-color: var(--brown-md) !important;
+}
+
+/* Text */
+.text-slate-500 {
+    color: var(--taupe) !important;
+    opacity: 0.75;
+}
+
+.text-slate-400 {
+    color: var(--taupe) !important;
+}
+
+.text-slate-300 {
+    color: var(--blush) !important;
+}
+
+.text-slate-200 {
+    color: var(--blush-lt) !important;
+}
+
+/* Header sticky bar */
+header.border-b {
+    border-color: var(--brown-md) !important;
+}
+
+header {
+    background-color: rgba(30, 34, 53, 0.92) !important;
+}
+
+/* ── Accent: indigo → blush/taupe ───────────────────────── */
+.text-indigo-400,
+.text-indigo-300 {
+    color: var(--blush) !important;
+}
+
+.bg-indigo-950 {
+    background-color: var(--navy-3) !important;
+}
+
+.bg-indigo-900 {
+    background-color: var(--navy-2) !important;
+}
+
+.border-indigo-900,
+.border-indigo-800 {
+    border-color: var(--brown-md) !important;
+}
+
+.border-indigo-500\/20,
+.border-indigo-500\/30,
+.border-indigo-500\/80 {
+    border-color: color-mix(in srgb, var(--blush) 40%, transparent) !important;
+}
+
+.bg-indigo-500\/20,
+.bg-indigo-500\/10 {
+    background-color: color-mix(in srgb, var(--blush) 12%, transparent) !important;
+}
+
+.bg-indigo-600\/40 {
+    background-color: color-mix(in srgb, var(--blush) 25%, transparent) !important;
+}
+
+.bg-indigo-950\/80,
+.bg-indigo-950\/30,
+.bg-indigo-950\/50 {
+    background-color: var(--navy-3) !important;
+}
+
+.shadow-indigo-500\/50 {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--blush) 30%, transparent) !important;
+}
+
+.focus\:border-indigo-500:focus {
+    border-color: var(--blush) !important;
+}
+
+/* ── Accent: purple → taupe ─────────────────────────────── */
+.text-purple-400,
+.text-purple-300 {
+    color: var(--taupe) !important;
+}
+
+.text-purple-500 {
+    color: var(--taupe) !important;
+}
+
+.bg-purple-600,
+.bg-purple-600\/40 {
+    background-color: var(--brown-lt) !important;
+}
+
+.bg-purple-600:hover,
+.hover\:bg-purple-500:hover {
+    background-color: var(--taupe) !important;
+}
+
+.bg-purple-950\/40,
+.bg-purple-950\/50,
+.bg-purple-950\/20 {
+    background-color: var(--navy-3) !important;
+}
+
+.bg-purple-900\/40,
+.bg-purple-800\/40 {
+    background-color: color-mix(in srgb, var(--brown-md) 40%, transparent) !important;
+}
+
+.border-purple-900\/50,
+.border-purple-800\/50,
+.border-purple-800\/40 {
+    border-color: color-mix(in srgb, var(--taupe) 35%, transparent) !important;
+}
+
+.shadow-purple-900\/50 {
+    box-shadow: 0 6px 24px color-mix(in srgb, var(--brown-md) 50%, transparent) !important;
+}
+
+.focus\:border-purple-500:focus {
+    border-color: var(--taupe) !important;
+}
+
+.text-purple-300 {
+    color: var(--taupe) !important;
+}
+
+.bg-purple-500\/20 {
+    background-color: color-mix(in srgb, var(--taupe) 18%, transparent) !important;
+}
+
+.border-purple-500\/30,
+.border-purple-500\/40 {
+    border-color: color-mix(in srgb, var(--taupe) 35%, transparent) !important;
+}
+
+/* Active nav button highlight */
+.nav-btn.text-purple-400 {
+    color: var(--blush) !important;
+    background-color: color-mix(in srgb, var(--blush) 12%, transparent) !important;
+    border-color: color-mix(in srgb, var(--blush) 30%, transparent) !important;
+}
+
+/* ── Gradient hero backgrounds ───────────────────────────── */
+.bg-gradient-to-r.from-slate-900.via-indigo-950.to-slate-900 {
+    background: linear-gradient(to right, var(--navy), var(--navy-3), var(--navy)) !important;
+}
+
+.bg-gradient-to-b.from-slate-900.to-indigo-950\/80 {
+    background: linear-gradient(to bottom, var(--navy-2), var(--navy-3)) !important;
+}
+
+.bg-gradient-to-r.from-purple-900\/10.to-indigo-900\/10 {
+    background: linear-gradient(to right,
+            color-mix(in srgb, var(--brown-md) 10%, transparent),
+            color-mix(in srgb, var(--navy-3) 10%, transparent)) !important;
+}
+
+.bg-gradient-to-br.from-indigo-950.via-slate-900.to-indigo-950 {
+    background: linear-gradient(to bottom right, var(--navy-3), var(--navy-2), var(--navy-3)) !important;
+}
+
+.border-indigo-950 {
+    border-color: var(--navy-3) !important;
+}
+
+.border-indigo-900\/40,
+.border-indigo-900\/60 {
+    border-color: color-mix(in srgb, var(--navy-3) 60%, transparent) !important;
+}
+
+.bg-indigo-950\/30 {
+    background-color: color-mix(in srgb, var(--navy-3) 40%, transparent) !important;
+}
+
+.text-indigo-300 {
+    color: var(--blush) !important;
+}
+
+/* Hero text gradient */
+.bg-gradient-to-r.from-purple-400.via-indigo-400.to-cyan-400 {
+    background-image: linear-gradient(to right, var(--blush-lt), var(--blush), var(--taupe)) !important;
+}
+
+.bg-gradient-to-r.from-pink-400.via-purple-400.to-indigo-400 {
+    background-image: linear-gradient(to right, var(--blush-lt), var(--blush), var(--taupe)) !important;
+}
+
+/* Logo icon gradient */
+.bg-gradient-to-tr.from-purple-600.to-indigo-500 {
+    background: linear-gradient(to top right, var(--brown-lt), var(--taupe)) !important;
+}
+
+/* Desktop screen radial bg */
+.from-slate-900.via-indigo-950.to-slate-950 {
+    --tw-gradient-from: var(--navy-2);
+    --tw-gradient-via: var(--navy-3);
+    --tw-gradient-to: var(--navy);
+}
+
+/* CTA primary button */
+.bg-gradient-to-r.from-purple-600.to-indigo-600 {
+    background: linear-gradient(to right, var(--brown-lt), var(--taupe)) !important;
+}
+
+.hover\:from-purple-500:hover,
+.hover\:to-indigo-500:hover {
+    background: linear-gradient(to right, var(--taupe), var(--blush)) !important;
+}
+
+/* CTA secondary / warung button */
+.bg-gradient-to-r.from-indigo-600.to-purple-600 {
+    background: linear-gradient(to right, var(--brown-lt), var(--taupe)) !important;
+}
+
+.hover\:from-indigo-500:hover,
+.hover\:to-purple-500:hover {
+    background: linear-gradient(to right, var(--taupe), var(--blush)) !important;
+}
+
+/* ── Accent: cyan → blush ────────────────────────────────── */
+.text-cyan-400,
+.text-cyan-500 {
+    color: var(--blush) !important;
+}
+
+/* ── Accent override for .bg-slate-850 ───────────────────── */
+.bg-slate-850 {
+    background-color: var(--brown-dk) !important;
+}
+
+/* ── Mobile nav active text ──────────────────────────────── */
+#m-btn-tab-landing.text-purple-400,
+.flex.flex-col.items-center.text-purple-400 {
+    color: var(--blush) !important;
+}
+
+/* ── Hover overrides ─────────────────────────────────────── */
+.hover\:bg-slate-800\/60:hover {
+    background-color: color-mix(in srgb, var(--brown-dk) 60%, transparent) !important;
+}
+
+.hover\:bg-slate-700:hover {
+    background-color: var(--brown-lt) !important;
+}
+
+.hover\:border-slate-600:hover {
+    border-color: var(--taupe) !important;
+}
+
+.hover\:text-white:hover {
+    color: var(--blush-lt) !important;
+}
+
+/* ── Promo bundle buttons ────────────────────────────────── */
+.bg-indigo-950\/50 {
+    background-color: color-mix(in srgb, var(--navy-3) 60%, transparent) !important;
+}
+
+.hover\:bg-indigo-900:hover {
+    background-color: var(--navy-3) !important;
+}
+
+.border-indigo-800 {
+    border-color: var(--brown-md) !important;
+}
+
+.text-indigo-300 {
+    color: var(--blush) !important;
+}
+
+/* ── Operator add-time button (bg-indigo-900) ────────────── */
+.bg-indigo-900 {
+    background-color: var(--navy-3) !important;
+}
+
+.hover\:bg-indigo-800:hover {
+    background-color: var(--navy-2) !important;
+}
+
+.text-indigo-300 {
+    color: var(--blush) !important;
+}
+
+/* ── Billing overlay accent ──────────────────────────────── */
+.border-2.border-indigo-500\/80 {
+    border-color: color-mix(in srgb, var(--blush) 50%, transparent) !important;
+}
+
+/* ── Game target ─────────────────────────────────────────── */
+.bg-indigo-500 {
+    background-color: var(--taupe) !important;
+}
+
+.border-indigo-900 {
+    border-color: var(--navy-3) !important;
+}
+
+/* ── Modal ───────────────────────────────────────────────── */
+#modal-alert .bg-slate-900 {
+    background-color: var(--navy-2) !important;
+}
+
+#modal-alert .border-slate-800 {
+    border-color: var(--brown-md) !important;
+}
+
+.bg-purple-600.hover\:bg-purple-500 {
+    background-color: var(--brown-lt) !important;
+}
+
+/* ── Input / select focused states ───────────────────────── */
+select,
+input[type="text"],
+input[type="range"] {
+    accent-color: var(--taupe);
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: var(--taupe) !important;
+    outline: none;
+}
